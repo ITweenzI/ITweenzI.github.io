@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Lucas Hattry</title>
+    <link rel="stylesheet" href="neon-title.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nom_de_la_Police:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nom de la Police', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(145deg, #0e0e0e, #1a1a1a);
+            color: #ffffff;
+        }
+        
+        header {
+            background: linear-gradient(180deg, #1f1f1f, #292929);
+            padding: 10px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin: 0 20px;
+        }
+        
+        nav ul li a {
+            color: #d4d4d4;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #7649D4, 0 0 20px #4CC2FF;
+        }
+        
+        #competences {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        #competences h2 {
+            font-size: 2em;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+        }
+
+        #competences h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #7649D4;
+            margin: 5px auto;
+        }
+
+        .skill {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .skill.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .text {
+            flex: 1;
+            text-align: left;
+            padding: 20px;
+        }
+        
+        .image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .image img {
+            max-width: 150px;
+            height: auto;
+            filter: grayscale(20%) contrast(120%);
+            transition: transform 0.3s ease;
+        }
+        
+        .image img:hover {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+
+        footer {
+            background: linear-gradient(180deg, #1f1f1f, #292929);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="accueil.html"><h2>Accueil</h2></a></li>
+                <li><a href="veille.html"><h2>Veille</h2></a></li>
+                <li class="logo"><div class="neon-text">Hattry</div></li>
+                <li><a href="projets.html"><h2>Projets</h2></a></li>
+                <li><a href="contact.html"><h2>Contact</h2></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="competences">
+        <h2>Compétences</h2>
+        <div class="skill">
+            <div class="text">
+                <h3>HTML5</h3>
+                <p>HTML5 est le langage de base pour structurer le contenu web. Il permet de créer des pages web accessibles et interactives. Il est par exemple celui utilisé pour écrire ce site !</p>
+            </div>
+            <div class="image">
+                <img src="images/HTML5_logo_and_wordmark.svg" alt="HTML5">
+            </div>
+        </div>
+        <div class="skill reverse">
+            <div class="image">
+                <img src="images/CSS3_logo_and_wordmark.svg" alt="CSS3">
+            </div>
+            <div class="text">
+                <h3>CSS3</h3>
+                <p>CSS3 est utilisé pour styliser les pages web, en ajoutant des couleurs, des animations et une mise en page responsive.</p>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="text">
+                <h3>JavaScript</h3>
+                <p>JavaScript est un langage de programmation qui permet d'ajouter de l'interactivité aux sites web, comme des animations et des fonctionnalités dynamiques. Il permet de réaliser beaucoup d'éléments agréables pour l'ergonomie du site et donc pour le confort de l'utilisateur mais peut aussi réaliser des traitements complexes.</p>
+            </div>
+            <div class="image">
+                <img src="images/Unofficial_JavaScript_logo_2.svg" alt="JavaScript">
+            </div>
+        </div>
+        <div class="skill reverse">
+            <div class="image">
+                <img src="images/PHP-logo.svg" alt="PHP">
+            </div>
+            <div class="text">
+                <h3>PHP</h3>
+                <p>PHP est un langage côté serveur utilisé pour le développement web dynamique, souvent avec des bases de données. Il est le pillier des applications notamment dans les entreprises. <br/>
+                Sa maitrise et sa compréhension son éssentiel pour pouvoir développer des outils informatiques plus complexes.</p>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="text">
+                <h3>MySQL</h3>
+                <p>MySQL est un système de gestion de bases de données utilisé pour stocker et gérer des données pour des applications web. Simple d'utilisation, il est pourtant essentielles pour tous sites internet pour la gestion des données utilisateurs par exemples.</p>
+            </div>
+            <div class="image">
+                <img src="images/MySQL.svg" alt="MySQL">
+            </div>
+        </div>
+        <div class="skill">
+            <div class="text">
+                <h3>Pourquoi tout ces languages ?</h3>
+                <p>Il me semblait important de rassembler ces languages que j'ai appris jusqu'ici a utiliser. Il forme les bases de mes connaissances et, pour beaucoup la base de ce que l'on peut faire en développant sur le web. En les maitrisants, ils nous ouvrent la porte du tout est possible nous permettant de répondre a bon nombres de besoins !</p>
+            </div>
+            <div class="image">
+                <img src="images/2994534.svg" alt="MySQL">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 - Lucas Hattry</p>
+        <p><a href="Tableau_synthèseE4.pdf" download>Télécharger le tableau E6</a></p>
+        <p><a href="CV 2.0.pdf" download>Télécharger mon CV</a></p>
+        <p><a href="https://www.linkedin.com/in/lucas-hattry/">Mon linkedIn</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

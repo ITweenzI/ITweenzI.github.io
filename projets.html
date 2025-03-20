@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Lucas Hattry</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="neon-title.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nom_de_la_Police:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .projet {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .projet.reverse {
+            flex-direction: row-reverse;
+        }
+        .projet .text {
+            flex: 1;
+            padding: 20px;
+            text-align: left;
+        }
+        .projet .image {
+            flex: 1;
+            text-align: center;
+        }
+        .projet .image img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        /* Lightbox */
+        .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999; /* Toujours devant */
+}
+
+/* Assurer que toutes les images en arrière-plan restent invisibles */
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    z-index: 10000; /* Toujours devant */
+}
+
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        .lightbox .prev, .lightbox .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .lightbox .prev { left: 20px; }
+        .lightbox .next { right: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="accueil.html"><h2>Accueil</h2></a></li>
+                <li><a href="skills.html"><h2>Compétences</h2></a></li>
+                <li class="logo"><div class="neon-text">Hattry</div></li>
+                <li><a href="veille.html"><h2>Veille</h2></a></li>
+                <li><a href="contact.html"><h2>Contact</h2></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="projets">
+        <h2>Mes Projets</h2>
+        <div class="projet">
+            <div class="text">
+                <h3>GSB Compte Rendu</h3>
+                <p><h4>Ce projet est le premier que j'ai réalisé lors de ma 2ème année. Développez en binôme, nous avons pus mettre en pratique des méthodes de gestion
+                    de projet tels que Scrum ou encore Trello, un tableau nous permettant d'avoir une vue d'ensemble de l'avancement du projet en découpant chaque parties
+                    du projet en user story ou tâches. Permettant de répartir les tâches éfficacements. Ce site a pour but la visualisation, modification, création d'informations de praticien.
+                    Il y a aussi de la gestion d'habilitations et enfin, derrière ce que l'on voit, de la mise en place de sécurité. Ce projet a été développé en utilisant du html,php,javascript et du css pour le style.  
+                </h4></p>
+            </div>
+            <div class="image">
+                <img src="images_projets/GSBCompterendu/accueil.png" alt="GSB Compte Rendu image d'accueil" onclick="openLightbox(['images_projets/GSBCompterendu/accueil.png','images_projets/GSBCompterendu/accueil_deco.png','images_projets/GSBCompterendu/choix_medicaments.png', 'images_projets/GSBCompterendu/choix_praticiens_barre.png', 'images_projets/GSBCompterendu/choix_rapp.png','images_projets/GSBCompterendu/details_medocs.png', 'images_projets/GSBCompterendu/info_pra.png', 'images_projets/GSBCompterendu/liste_rapp.png','images_projets/GSBCompterendu/modif_pra.png', 'images_projets/GSBCompterendu/new_pra.png','images_projets/GSBCompterendu/new_rapp.png','images_projets/GSBCompterendu/pra_choisie.png','images_projets/GSBCompterendu/profil_test.png'], 'lightbox-GSBcompterendu')">
+            </div>
+        </div>
+   
+    
+<!-- Lightbox spécifique au projet GSBcompterendu -->
+<div class="lightbox" id="lightbox-GSBcompterendu">
+    <span class="close" onclick="closeLightbox('lightbox-GSBcompterendu')">&times;</span>
+    <span class="prev" onclick="changeImage(-1, 'lightbox-GSBcompterendu')">&#10094;</span>
+    <img class="lightbox-image" src="">
+    <span class="next" onclick="changeImage(1, 'lightbox-GSBcompterendu')">&#10095;</span>
+</div>
+
+    <div class="projet">
+        <div class="text">
+            <h3>Projet Stage 1ère année</h3>
+            <p><h4>Ce projet est le premier que j'ai réalisé en entreprise. Bien que très excitant, il n'y a pas beaucoup de chose a voir pour quelques raisons: La première étant que ce sur quoi je travaillais était une application en interne
+                d'affichage de relevé bancaire. Les informations étant donc privés, je n'ai pas pus prendsre beaucoup de capture. Ce stage a duré 7 semaines ou j'ai du m'approprier plusieurs savoris dont je ne connaissais pas encore les détours.
+                J'y ai appris les architectures de sites en MVC qui était jusqu'alors une faco de développer complétement inconnu. J'étais chargé de mettre a niveau cette application en la faisant passé de php (son language d'origine) 
+                en Symfony, un framework php plus récent, sécurisé et pratique a manipulé. 
+            </h4></p>
+        </div>
+        <div class="image">
+            <img src="images_projets/Relevee/noData.png" alt="Tableau d'affichage d'un relevé bancaire" onclick="openLightbox(['images_projets/Relevee/affich_cpt','images_projets/Relevee/noData.png'], 'lightbox-projet1er')">
+        </div>
+    </div>
+
+
+<!-- Lightbox spécifique au projet 1er année -->
+<div class="lightbox" id="lightbox-projet1er">
+    <span class="close" onclick="closeLightbox('lightbox-projet1er')">&times;</span>
+    <span class="prev" onclick="changeImage(-1, 'lightbox-projet1er')">&#10094;</span>
+    <img class="lightbox-image" src="">
+    <span class="next" onclick="changeImage(1, 'lightbox-projet1er')">&#10095;</span>
+</div>
+    
+<div class="projet">
+    <div class="text">
+        <h3>Projet Stage 2ème année</h3>
+        <p><h4> Ce stage fut spéciale pour moi. Tout d'abord, réalisé en toute autonomie dans l'entreprise où je me suis rendu, j'ai dus répondre a leurs attentes en développant une application répondant a leur besoin.
+            Je fut un peu placé pour la première fois en tant que développeur freelance ayant un contrat. J'ai donc réalisé une carte interractive du monde qui, par api et une base de données, affiche les informatiosn d'un pays tel que sa superficie ou sa population.
+            Les données étant générer par api, celle-ci peuvent être constamment tenu à jour en cliquant juste sur quelques boutons et procédé mis en place.  
+        </h4></p>
+    </div>
+    <div class="image">
+        <img src="images_projets/Carte/exemple.png" alt="Carte interractive" onclick="openLightbox(['images_projets/Carte/connexion.png','images_projets/Carte/crea_base.png','images_projets/Carte/exemple.png', 'images_projets/Carte/gestion_data.png', 'images_projets/Carte/modif_data.png'], 'lightbox-projet2e')">
+    </div>
+</div>
+
+
+<!-- Lightbox spécifique au projet 2ème année -->
+<div class="lightbox" id="lightbox-projet2e">
+    <span class="close" onclick="closeLightbox('lightbox-projet2e')">&times;</span>
+    <span class="prev" onclick="changeImage(-1, 'lightbox-projet2e')">&#10094;</span>
+    <img class="lightbox-image" src="">
+    <span class="next" onclick="changeImage(1, 'lightbox-projet2e')">&#10095;</span>
+</div>
+
+<div class="projet">
+    <div class="text">
+        <h3>GSBParam</h3>
+        <p><h4>Ce projet est en cours de développements... 
+        </h4></p>
+    </div>
+    <div class="image">
+        <img src="" alt="Page d'accueil de GSBParam" onclick="openLightbox([''], 'lightbox-GSBParam')">
+    </div>
+</div>
+
+
+<!-- Lightbox spécifique au projet 2ème année -->
+<div class="lightbox" id="lightbox-GSBParam">
+    <span class="close" onclick="closeLightbox('lightbox-GSBParam')">&times;</span>
+    <span class="prev" onclick="changeImage(-1, 'lightbox-GSBParam')">&#10094;</span>
+    <img class="lightbox-image" src="">
+    <span class="next" onclick="changeImage(1, 'lightbox-GSBParam')">&#10095;</span>
+</div>
+</section>
+<footer>
+    <p>&copy; 2025 - Lucas Hattry</p>
+    <p><a href="Tableau_synthèseE4.pdf" download>Télécharger le tableau E6</a></p>
+    <p><a href="CV 2.0.pdf" download>Télécharger mon CV</a></p>
+    <p><a href="https://www.linkedin.com/in/lucas-hattry/">Mon linkedIn</a></p>
+</footer>
+
+    <script>
+let lightboxImages = {};
+let lightboxIndex = {};
+
+function openLightbox(imageArray, lightboxId) {
+    // Fermer toutes les autres lightbox ouvertes
+    document.querySelectorAll(".lightbox").forEach(lightbox => {
+        lightbox.style.display = "none";
+    });
+
+    // Stocker les images et l'index de la lightbox actuelle
+    lightboxImages[lightboxId] = imageArray;
+    lightboxIndex[lightboxId] = 0;
+
+    let lightbox = document.getElementById(lightboxId);
+    if (!lightbox) {
+        console.error("Lightbox non trouvée :", lightboxId);
+        return;
+    }
+
+    lightbox.querySelector(".lightbox-image").src = imageArray[0];
+    lightbox.style.display = "flex";
+}
+
+
+function closeLightbox(lightboxId) {
+    document.getElementById(lightboxId).style.display = 'none';
+}
+
+function changeImage(direction, lightboxId) {
+    lightboxIndex[lightboxId] += direction;
+    if (lightboxIndex[lightboxId] < 0) lightboxIndex[lightboxId] = lightboxImages[lightboxId].length - 1;
+    if (lightboxIndex[lightboxId] >= lightboxImages[lightboxId].length) lightboxIndex[lightboxId] = 0;
+    
+    document.getElementById(lightboxId).querySelector(".lightbox-image").src = lightboxImages[lightboxId][lightboxIndex[lightboxId]];
+}
+    </script>
+</body>
+</html>

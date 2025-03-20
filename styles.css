@@ -1,0 +1,142 @@
+/* Importation de la police d'écriture */
+@import url('https://fonts.googleapis.com/css2?family=Nom_de_la_Police:wght@400;700&display=swap');
+
+body {
+    font-family: 'Nom de la Police', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(145deg, #0e0e0e, #1a1a1a);
+    color: #ffffff;
+}
+
+header {
+    background: linear-gradient(180deg, #1f1f1f, #292929);
+    padding: 10px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #d4d4d4;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #7649D4, 0 0 20px #4CC2FF;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 10px 20px;
+    background: linear-gradient(160deg, #1c1c1c, #2a2a2a);
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(145deg, #1a1a1a, #292929);
+    box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.skill {
+    width: 120px;
+    text-align: center;
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.skill img {
+    width: 80px;
+    height: auto;
+    filter: grayscale(20%) contrast(120%);
+    transition: transform 0.3s ease;
+}
+
+.skill img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #7649D4;
+    margin: 10px auto 0;
+}
+
+footer {
+    background: linear-gradient(180deg, #1f1f1f, #292929);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.5);
+}
+.btn-en-savoir-plus {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #7649D4;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-en-savoir-plus:hover {
+    background-color: #4CC2FF;
+}

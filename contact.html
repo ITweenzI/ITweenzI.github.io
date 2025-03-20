@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Lucas Hattry</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="neon-title.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nom_de_la_Police:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-form {
+            width: 50%;
+            margin: 40px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background: #7649D4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .contact-form button:hover {
+            background: #4CC2FF;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="accueil.html"><h2>Accueil</h2></a></li>
+                <li><a href="skills.html"><h2>Compétences</h2></a></li>
+                <li class="logo"><div class="neon-text">Hattry</div></li>
+                <li><a href="projets.html"><h2>Projets</h2></a></li>
+                <li><a href="veille.html"><h2>Veille</h2></a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="contact">
+        <h2>Contactez-moi</h2>
+        <form class="contact-form" action="send_mail.php" method="POST">
+            <input type="text" name="name" placeholder="Votre nom" required>
+            <input type="email" name="email" placeholder="Votre email" required>
+            <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>               
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 - Lucas Hattry</p>
+        <p><a href="Tableau_synthèseE4.pdf" download>Télécharger le tableau E6</a></p>
+        <p><a href="CV 2.0.pdf" download>Télécharger mon CV</a></p>
+        <p><a href="https://www.linkedin.com/in/lucas-hattry/">Mon linkedIn</a></p>
+    </footer>
+    </script>
+</body>
+</html>
