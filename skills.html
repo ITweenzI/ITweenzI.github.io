@@ -222,21 +222,130 @@
         </div>
         <div class="skill">
             <div class="text">
-                <h3>Pourquoi tout ces languages ?</h3>
-                <p>Il me semblait important de rassembler ces languages que j'ai appris jusqu'ici a utiliser. Il forme les bases de mes connaissances et, pour beaucoup la base de ce que l'on peut faire en développant sur le web. En les maitrisants, ils nous ouvrent la porte du tout est possible nous permettant de répondre a bon nombres de besoins !</p>
+                <h3>Pourquoi tout ces langages ?</h3>
+                <p>Il me semblait important de rassembler ces langages que j'ai appris jusqu'ici a utiliser. Il forme les bases de mes connaissances et, pour beaucoup la base de ce que l'on peut faire en développant sur le web. En les maitrisants, ils nous ouvrent la porte du tout est possible nous permettant de répondre a bon nombres de besoins !</p>
             </div>
             <div class="image">
-                <img src="images/2994534.svg" alt="MySQL">
+                <img src="images/2994534.svg" alt="questionnement">
             </div>
         </div>
+                <div class="skill">
+            <div class="text">
+                <h3>La suite aux langages</h3>
+                <p>Tout cela constitue une base solide pour progresser dans mon domaine.
+                Ces expériences me servent également de point de départ pour préparer des certifications, qui me permettent à la fois de monter en compétences et de prouver mes acquis grâce à des attestations officielles.<br/>
+
+                Parmi les certifications que j'ai déjà obtenues :<br/>
+
+                Créez votre site web avec HTML5 et CSS3 (OpenClassrooms)<br/>
+
+                Concevez votre réseau TCP/IP (OpenClassrooms)<br/>
+
+                Cours complet en C++ (100 %)(w3schools)<br/>
+
+                Cours complet en Java (100 %)(w3schools)</p>
+            </div>
+            <div class="image">
+                <img src="images/certification/certif3.png" alt="certifications" onclick="openLightbox(['images/certification/certif1.png', 'images/certification/certif2.png', 'images/certification/certif3.png', 'images/certification/certif4.png'], 'lightbox-certif')">
+            </div>
+        </div>
+        <!-- Lightbox spécifique au projet 2ème année -->
+<div class="lightbox" id="lightbox-certif">
+    <span class="close" onclick="closeLightbox('lightbox-certif')">&times;</span>
+    <span class="prev" onclick="changeImage(-1, 'lightbox-certif')">&#10094;</span>
+    <img class="lightbox-image" src="">
+    <span class="next" onclick="changeImage(1, 'lightbox-certif')">&#10095;</span>
+</div>
     </section>
     <footer>
         <p>&copy; 2025 - Lucas Hattry</p>
         <p><a href="Tableau_synthèseE4.pdf" download>Télécharger le tableau E6</a></p>
-        <p><a href="CV 2.0.pdf" download>Télécharger mon CV</a></p>
+        <p><a href="CV final.pdf" download>Télécharger mon CV</a></p>
         <p><a href="https://www.linkedin.com/in/lucas-hattry/">Mon linkedIn</a></p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+    <script>
+let lightboxImages = {};
+let lightboxIndex = {};
+
+function openLightbox(imageArray, lightboxId) {
+    // Fermer toutes les autres lightbox ouvertes
+    document.querySelectorAll(".lightbox").forEach(lightbox => {
+        lightbox.style.display = "none";
+    });
+
+    // Stocker les images et l'index de la lightbox actuelle
+    lightboxImages[lightboxId] = imageArray;
+    lightboxIndex[lightboxId] = 0;
+
+    let lightbox = document.getElementById(lightboxId);
+    if (!lightbox) {
+        console.error("Lightbox non trouvée :", lightboxId);
+        return;
+    }
+
+    lightbox.querySelector(".lightbox-image").src = imageArray[0];
+    lightbox.style.display = "flex";
+}
+
+
+function closeLightbox(lightboxId) {
+    document.getElementById(lightboxId).style.display = 'none';
+}
+
+function changeImage(direction, lightboxId) {
+    lightboxIndex[lightboxId] += direction;
+    if (lightboxIndex[lightboxId] < 0) lightboxIndex[lightboxId] = lightboxImages[lightboxId].length - 1;
+    if (lightboxIndex[lightboxId] >= lightboxImages[lightboxId].length) lightboxIndex[lightboxId] = 0;
+    
+    document.getElementById(lightboxId).querySelector(".lightbox-image").src = lightboxImages[lightboxId][lightboxIndex[lightboxId]];
+}
+    </script>
+        <style>
+        
+        /* Lightbox */
+        .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999; /* Toujours devant */
+}
+
+/* Assurer que toutes les images en arrière-plan restent invisibles */
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    z-index: 10000; /* Toujours devant */
+}
+
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        .lightbox .prev, .lightbox .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .lightbox .prev { left: 20px; }
+        .lightbox .next { right: 20px; }
+    </style>
